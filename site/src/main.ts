@@ -1,13 +1,33 @@
-import { AllDSPInfo } from "./dsp";
+import { AllDSPInfo, Recipe } from "./dsp";
 import * as Dom from "./dom";
 import { English } from "./translate/english";
 import { isOnMobile } from "./checkers";
 
+require("halfmoon/css/halfmoon-variables.min.css");
+import halfmoon = require("halfmoon");
+
 export let INFO: AllDSPInfo;
 export const TRANSLATIONS = English;
-export const OPTIONS = {
-    displayUsageLinks: isOnMobile(),
+
+const optionsKey = "CenterBrainArchiveOptions";
+export let OPTIONS: {
+    displayUsageLinks: boolean,
+    savedRecipes: Recipe[];
 };
+let savedOptions = localStorage.getItem(optionsKey);
+if (savedOptions != null) {
+    OPTIONS = JSON.parse(savedOptions);
+} else {
+    OPTIONS = {
+        displayUsageLinks: isOnMobile(),
+        savedRecipes: [],
+    };
+};
+
+window.addEventListener("load", halfmoon.onDOMContentLoaded);
+window.addEventListener("visibilitychange", ev => {
+    localStorage.setItem(optionsKey, JSON.stringify(OPTIONS));
+});
 
 fetch('dsp.json')
     .then(r => r.json())
@@ -16,7 +36,6 @@ fetch('dsp.json')
         console.log(INFO);
 
         const content = document.getElementById('content')!;
-
         let updater = () => {
             const matcher = /#\?(\w+)=(\w+)/;
             let match = window.location.hash.match(matcher);
@@ -44,11 +63,19 @@ fetch('dsp.json')
         window.addEventListener('hashchange', updater);
         // and call it to start up!
         updater();
+        Dom.updatePins();
 
         const usageLinkToggle = document.getElementById('usage-links')! as HTMLInputElement;
         usageLinkToggle.checked = OPTIONS.displayUsageLinks;
         usageLinkToggle.onclick = ev => {
             OPTIONS.displayUsageLinks = usageLinkToggle.checked;
             updater();
+            Dom.updatePins();
         };
+        const sidebarToggle = document.getElementById('toggle-sidebar-btn')!;
+        sidebarToggle.onclick = () => {
+            halfmoon.toggleSidebar();
+        };
+
+        document.getElementById('sidebar-title')!.innerText = TRANSLATIONS.other.pinnedRecipes;
     });
