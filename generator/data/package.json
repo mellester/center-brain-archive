@@ -1,0 +1,19 @@
+{
+  "name": "data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "dependencies": {
+    "@types/node": "^7.0.5",
+    "fs": "^0.0.1-security",
+    "iconv": "^3.0.0"
+  },
+  "devDependencies": {
+    "ts-node": "^9.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -5,7 +5,16 @@ use serde::Serialize;
 #[derive(Debug, Clone, Copy, Serialize, JsonSchema)]
 #[allow(dead_code)]
 pub enum Producer {
-    AssemblingMachine,
+    Assembler1,
+    Assembler2,
+    Assembler3,
+    Lab,
+    HadronCollider,
+    MiningDrill,
+    OilExtractor,
+    RayReceiver,
+    WaterPump,
+    OrbitalCollector,
     Smelter,
     OilRefinery,
     ChemicalPlant,

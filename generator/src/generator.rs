@@ -75,7 +75,7 @@ pub struct RecipeEntry {
     /// Time in seconds to make it
     time: f32,
     results: Vec<ItemStack>,
-    made_in: Producer,
+    made_in: Vec<Producer>,
     handcraftable: bool,
     unlocked_by: Technology,
 }
@@ -86,7 +86,8 @@ struct PartialRecipeEntry {
     /// Time in seconds to make it
     time: f32,
     results: Vec<ItemStack>,
-    made_in: Producer,
+    made_in: Vec<Producer>,
+
     handcraftable: bool,
     unlocked_by: Technology,
 }
@@ -99,218 +100,8 @@ impl RecipeEntry {
     fn generate_all() -> EnumMap<Recipe, RecipeEntry> {
         EnumMap::from(|recipe| {
             // Sorry for this incredibly long table
-            let partial = match recipe {
-                Recipe::IronSmelting => PartialRecipeEntry {
-                    ingredients: vec![is(Item::IronOre, 1)],
-                    time: 1.0,
-                    results: vec![is(Item::IronIngot, 1)],
-                    made_in: Producer::Smelter,
-                    handcraftable: true,
-                    unlocked_by: Technology::DysonSphereProgram,
-                },
-                Recipe::CopperSmelting => PartialRecipeEntry {
-                    ingredients: vec![is(Item::CopperOre, 1)],
-                    time: 1.0,
-                    results: vec![is(Item::CopperIngot, 1)],
-                    made_in: Producer::Smelter,
-                    handcraftable: true,
-                    unlocked_by: Technology::DysonSphereProgram,
-                },
-                Recipe::StoneSmelting => PartialRecipeEntry {
-                    ingredients: vec![is(Item::StoneOre, 1)],
-                    time: 1.0,
-                    results: vec![is(Item::StoneBrick, 1)],
-                    made_in: Producer::Smelter,
-                    handcraftable: true,
-                    unlocked_by: Technology::DysonSphereProgram,
-                },
-                Recipe::SiliconSmelting => PartialRecipeEntry {
-                    ingredients: vec![is(Item::SiliconOre, 2)],
-                    time: 2.0,
-                    results: vec![is(Item::HighPuritySilicon, 1)],
-                    made_in: Producer::Smelter,
-                    handcraftable: true,
-                    unlocked_by: Technology::SmeltingPurification,
-                },
-                Recipe::GraphiteSmelting => PartialRecipeEntry {
-                    ingredients: vec![is(Item::CoalOre, 2)],
-                    time: 2.0,
-                    results: vec![is(Item::EnergeticGraphite, 1)],
-                    made_in: Producer::Smelter,
-                    handcraftable: true,
-                    unlocked_by: Technology::SmeltingPurification,
-                },
-                Recipe::PlasmaRefining => PartialRecipeEntry {
-                    ingredients: vec![is(Item::CrudeOil, 2)],
-                    time: 4.0,
-                    results: vec![is(Item::Hydrogen, 1), is(Item::RefinedOil, 2)],
-                    made_in: Producer::OilRefinery,
-                    handcraftable: false,
-                    unlocked_by: Technology::PlasmaExtractRefining,
-                },
-                Recipe::Plastic => PartialRecipeEntry {
-                    ingredients: vec![is(Item::EnergeticGraphite, 1), is(Item::RefinedOil, 2)],
-                    time: 3.0,
-                    results: vec![is(Item::Plastic, 1)],
-                    made_in: Producer::ChemicalPlant,
-                    handcraftable: false,
-                    unlocked_by: Technology::BasicChemicalEngineering,
-                },
-                Recipe::GrapheneFromFireIce => PartialRecipeEntry {
-                    ingredients: vec![is(Item::FireIce, 2)],
-                    time: 2.0,
-                    results: vec![is(Item::Graphene, 2), is(Item::Hydrogen, 1)],
-                    made_in: Producer::ChemicalPlant,
-                    handcraftable: false,
-                    unlocked_by: Technology::AppliedSuperconductor,
-                },
-                Recipe::GrapheneFromGraphiteAndSulfuric => PartialRecipeEntry {
-                    ingredients: vec![is(Item::EnergeticGraphite, 3), is(Item::RefinedOil, 1)],
-                    time: 3.0,
-                    results: vec![is(Item::Graphene, 2)],
-                    made_in: Producer::ChemicalPlant,
-                    handcraftable: false,
-                    unlocked_by: Technology::AppliedSuperconductor,
-                },
-                Recipe::MagnetSmelting => PartialRecipeEntry {
-                    ingredients: vec![is(Item::IronOre, 1)],
-                    time: 1.5,
-                    results: vec![is(Item::Magnet, 1)],
-                    made_in: Producer::Smelter,
-                    handcraftable: true,
-                    unlocked_by: Technology::DysonSphereProgram,
-                },
-                Recipe::Electromagnet => PartialRecipeEntry {
-                    ingredients: vec![is(Item::Magnet, 2), is(Item::CopperIngot, 1)],
-                    time: 1.0,
-                    results: vec![is(Item::Electromagnet, 2)],
-                    made_in: Producer::AssemblingMachine,
-                    handcraftable: true,
-                    unlocked_by: Technology::DysonSphereProgram,
-                },
-                Recipe::CrystalSiliconFromIngot => PartialRecipeEntry {
-                    ingredients: vec![is(Item::HighPuritySilicon, 1)],
-                    time: 2.0,
-                    results: vec![is(Item::CrystalSilicon, 1)],
-                    made_in: Producer::Smelter,
-                    handcraftable: false,
-                    unlocked_by: Technology::CrystalSmelting,
-                },
-                Recipe::CrystalSiliconFromFractal => PartialRecipeEntry {
-                    ingredients: vec![is(Item::FractalSilicon, 1)],
-                    time: 4.0,
-                    results: vec![is(Item::CrystalSilicon, 1)],
-                    made_in: Producer::Smelter,
-                    handcraftable: false,
-                    unlocked_by: Technology::CrystalSmelting,
-                },
-                Recipe::GlassSmelting => PartialRecipeEntry {
-                    ingredients: vec![is(Item::StoneOre, 2)],
-                    time: 2.0,
-                    results: vec![is(Item::Glass, 1)],
-                    made_in: Producer::Smelter,
-                    handcraftable: true,
-                    unlocked_by: Technology::AutomaticMetallurgy,
-                },
-                Recipe::DiamondFromGraphite => PartialRecipeEntry {
-                    ingredients: vec![is(Item::EnergeticGraphite, 1)],
-                    time: 2.0,
-                    results: vec![is(Item::Diamond, 1)],
-                    made_in: Producer::Smelter,
-                    handcraftable: false,
-                    unlocked_by: Technology::CrystalSmelting,
-                },
-                Recipe::DiamondFromKimberlite => PartialRecipeEntry {
-                    ingredients: vec![is(Item::Kimberlite, 1)],
-                    time: 2.0,
-                    results: vec![is(Item::Diamond, 1)],
-                    made_in: Producer::Smelter,
-                    handcraftable: false,
-                    unlocked_by: Technology::CrystalSmelting,
-                },
-                Recipe::XRayCracking => PartialRecipeEntry {
-                    ingredients: vec![is(Item::RefinedOil, 1), is(Item::Hydrogen, 2)],
-                    time: 4.0,
-                    results: vec![is(Item::Graphene, 1), is(Item::Hydrogen, 3)],
-                    made_in: Producer::OilRefinery,
-                    handcraftable: false,
-                    unlocked_by: Technology::XRayCracking,
-                },
-                Recipe::OrganicCrystalFromWood => PartialRecipeEntry {
-                    ingredients: vec![
-                        is(Item::Log, 20),
-                        is(Item::PlantFuel, 30),
-                        is(Item::Water, 10),
-                    ],
-                    time: 6.0,
-                    results: vec![is(Item::OrganicCrystal, 1)],
-                    made_in: Producer::ChemicalPlant,
-                    handcraftable: false,
-                    unlocked_by: Technology::PolymerChemicalEngineering,
-                },
-                Recipe::OrganicCrystalFromPlastic => PartialRecipeEntry {
-                    ingredients: vec![
-                        is(Item::Plastic, 2),
-                        is(Item::RefinedOil, 1),
-                        is(Item::Water, 1),
-                    ],
-                    time: 6.0,
-                    results: vec![is(Item::OrganicCrystal, 1)],
-                    made_in: Producer::ChemicalPlant,
-                    handcraftable: false,
-                    unlocked_by: Technology::PolymerChemicalEngineering,
-                },
-                Recipe::HydrogenFuelRod => PartialRecipeEntry {
-                    ingredients: vec![is(Item::TitaniumIngot, 1), is(Item::Hydrogen, 5)],
-                    time: 3.0,
-                    results: vec![is(Item::HydrogenFuelRod, 1)],
-                    made_in: Producer::AssemblingMachine,
-                    handcraftable: true,
-                    unlocked_by: Technology::HydrogenFuelRod,
-                },
-                Recipe::SteelSmelting => PartialRecipeEntry {
-                    ingredients: vec![is(Item::IronIngot, 3)],
-                    time: 3.0,
-                    results: vec![is(Item::Steel, 1)],
-                    made_in: Producer::Smelter,
-                    handcraftable: false,
-                    unlocked_by: Technology::SteelSmelting,
-                },
-                /*
-                Recipe::SiliconOreFromStone => {}
-                Recipe::CircuitBoard => {}
-                Recipe::SulfuricAcidFromStone => {}
-                Recipe::PlasmaExciter => {}
-                Recipe::Processor => {}
-                Recipe::PhotonCombinerFromPrism => {}
-                Recipe::PhotonCombinerFromCrystal => {}
-                Recipe::MicrocrystallineComponent => {}
-                Recipe::ElectromagneticMatrix => {}
-                Recipe::EnergyMatrix => {}
-                Recipe::Foundation => {}
-                Recipe::TeslaTower => {}
-                Recipe::WirelessPowerTower => {}
-                Recipe::WindTurbine => {}
-                Recipe::ThermalPowerStation => {}
-                Recipe::SolarPanel => {}
-                Recipe::ConveyorMK1 => {}
-                Recipe::Splitter => {}
-                Recipe::StorageMK1 => {}
-                Recipe::FluidStorage => {}
-                Recipe::SorterMK1 => {}
-                Recipe::SorterMK2 => {}
-                Recipe::MiningMachine => {}
-                Recipe::WaterPump => {}
-                Recipe::OilExtractor => {}
-                Recipe::OilRefinery => {}
-                Recipe::AssemblingMachineMK1 => {}
-                Recipe::Smelter => {}
-                Recipe::Fractionator => {}
-                Recipe::ChemicalPlant => {}
-                Recipe::MatrixLab => {}
-                */
-                _ => PartialRecipeEntry::default(),
-            };
+            let partial = include!("../data/PartialRecipeEntry.in");
+              
             // Transform the entry
             RecipeEntry {
                 recipe,

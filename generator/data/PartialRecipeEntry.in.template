@@ -1,0 +1,11 @@
+match recipe {
+  Recipe::IronSmelting => PartialRecipeEntry {
+    ingredients: vec![is(Item::IronOre, 1)],
+    time: 1.0,
+    results: vec![is(Item::IronIngot, 1)],
+    made_in: Producer::Smelter,
+    handcraftable: true,
+    unlocked_by: Technology::DysonSphereProgram,
+  },
+  _ => PartialRecipeEntry::default(),
+}
