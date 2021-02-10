@@ -165,7 +165,10 @@ function makeItem(item: Item, type: keyof HTMLElementTagNameMap = "p", small = f
     elm.classList.add('dsp-item');
 
     if (OPTIONS.displayUsageLinks) {
-        elm.innerHTML = `${TRANSLATIONS.items[item] ?? INFO.items[item].name} 
+        elm.innerHTML = `${TRANSLATIONS.items[item]            
+            ?? INFO.items[item].name  // translation might be undefined so we fall back to the english name
+            ??  item   // If the english name is not defined we just use the id
+        } 
             [<a href="#?production=${item}">${small ? TRANSLATIONS.other.produceSmall : TRANSLATIONS.other.produce}</a>]
             [<a href="#?consumption=${item}">${small ? TRANSLATIONS.other.consumeSmall : TRANSLATIONS.other.consume}</a>]`;
     }
@@ -187,9 +190,10 @@ function makeItemstack(stack: ItemStack, type: keyof HTMLElementTagNameMap = "p"
     let elm = document.createElement(type);
     elm.classList.add('dsp-itemstack');
     if (OPTIONS.displayUsageLinks){
-        elm.innerHTML = `${stack.count}x ${TRANSLATIONS.items[stack.item] ?? // translation might be undefined so we fall back to the english name
-            INFO.items[stack.item].name ??  // If the english name is not defined we just use the id
-             stack.item} 
+        elm.innerHTML = `${stack.count}x ${TRANSLATIONS.items[stack.item]
+            ?? INFO.items[stack.item].name  // translation might be undefined so we fall back to the english name
+            ??  stack.item   // If the english name is not defined we just use the id
+        }
         [<a href="#?production=${stack.item}">${small ? TRANSLATIONS.other.produceSmall : TRANSLATIONS.other.produce}</a>]
         [<a href="#?consumption=${stack.item}">${small ? TRANSLATIONS.other.consumeSmall : TRANSLATIONS.other.consume}</a>]`;
     }
