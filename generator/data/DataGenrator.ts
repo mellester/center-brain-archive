@@ -98,12 +98,12 @@ let itemsStrings : Array<string> = [];
                 let string = struct.position?.split(' ')
                 if (string === undefined)
                     continue;
-                width = parseInt(string[1].slice(1,-2) ?? 0);
-                if (width == undefined || isNaN(width)) {
+                width = parseInt(string[0].slice(1,-2) ?? 0);
+                if (width) {
                     width = 0;
                 }
-                height = parseInt(string[0].slice(1,-2) ?? 0);
-                if (height == undefined || isNaN(height)) {
+                height = parseInt(string[1].slice(1,-2) ?? 0);
+                if (height) {
                     height = 0;
                 }
                 break;

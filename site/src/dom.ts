@@ -142,6 +142,20 @@ function makeRecipe(recipe: string, type: "listing" | "pinned"): HTMLElement {
         return card;
     }
 }
+function makeImg(item : Item) {
+    const col = INFO.items[item].icon.col;
+    const row = INFO.items[item].icon.row;
+    let img = document.createElement('img');
+    const size = {
+        width: 832,
+        height: 768
+    };
+    img.style.backgroundImage = "url(https://raw.githubusercontent.com/factoriolab/factorio-lab/master/src/data/dsp/icons.png)";
+    img.style.width = (size.width) / 13 + "px";
+    img.style.height = (size.height) / 12 + "px";
+    img.style.backgroundPosition = -row.toString() + "px " + -col.toString() + "px";
+    return img;
+}
 
 /**
  * Create an element representing an item.
@@ -159,18 +173,8 @@ function makeItem(item: Item, type: keyof HTMLElementTagNameMap = "p", small = f
         elm.innerText = TRANSLATIONS.items[item] ?? INFO.items[item].name;
         addHandlersItem(elm, item);
     }
-    const col = INFO.items[item].icon.col;
-    const row = INFO.items[item].icon.row;
-    let img = document.createElement('img');
-    const size = {
-        width: 832,
-        height: 768
-    }
-    img.style.backgroundImage = "url(https://raw.githubusercontent.com/factoriolab/factorio-lab/master/src/data/dsp/icons.png)"
-    img.style.width  = (size.width)/13 + "px";
-    img.style.height  = (size.height)/12 + "px";
-    img.style.backgroundPositionX = col.toString() + "px";
-    img.style.backgroundPositionY = row.toString() + "px";
+    let img = makeImg(item);
+
     //preppend picture 
     elm.prepend(img);
     return elm;
@@ -194,18 +198,7 @@ function makeItemstack(stack: ItemStack, type: keyof HTMLElementTagNameMap = "p"
         addHandlersItem(elm, stack.item);
     }
  
-    const col = INFO.items[stack.item].icon.col;
-    const row = INFO.items[stack.item].icon.row;
-    let img = document.createElement('img');
-    const size = {
-        width: 832,
-        height: 768
-    }
-    img.style.backgroundImage = "url(https://raw.githubusercontent.com/factoriolab/factorio-lab/master/src/data/dsp/icons.png)"
-    img.style.width  = '-' + (size.width)/13 + "px";
-    img.style.height  = '-' + (size.height)/12 + "px";
-    img.style.backgroundPositionX = col.toString() + "px";
-    img.style.backgroundPositionY = row.toString() + "px";
+    let img = makeImg(stack.item);
     //preppend picture 
     elm.prepend(img);
 
