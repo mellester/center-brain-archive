@@ -151,12 +151,12 @@ function makeItem(item: Item, type: keyof HTMLElementTagNameMap = "p", small = f
     elm.classList.add('dsp-item');
 
     if (OPTIONS.displayUsageLinks) {
-        elm.innerHTML = `${TRANSLATIONS.items[item]} 
+        elm.innerHTML = `${TRANSLATIONS.items[item] ?? INFO.items[item].name} 
             [<a href="#?production=${item}">${small ? TRANSLATIONS.other.produceSmall : TRANSLATIONS.other.produce}</a>]
             [<a href="#?consumption=${item}">${small ? TRANSLATIONS.other.consumeSmall : TRANSLATIONS.other.consume}</a>]`;
     }
     else {
-        elm.innerText = TRANSLATIONS.items[item];
+        elm.innerText = TRANSLATIONS.items[item] ?? INFO.items[item].name;
         addHandlersItem(elm, item);
     }
     const col = INFO.items[item].icon.col;
@@ -183,12 +183,14 @@ function makeItemstack(stack: ItemStack, type: keyof HTMLElementTagNameMap = "p"
     let elm = document.createElement(type);
     elm.classList.add('dsp-itemstack');
     if (OPTIONS.displayUsageLinks){
-        elm.innerHTML = `${stack.count}x ${TRANSLATIONS.items[stack.item]} 
+        elm.innerHTML = `${stack.count}x ${TRANSLATIONS.items[stack.item] ?? // translation might be undefined so we fall back to the english name
+            INFO.items[stack.item].name ??  // If the english name is not defined we just use the id
+             stack.item} 
         [<a href="#?production=${stack.item}">${small ? TRANSLATIONS.other.produceSmall : TRANSLATIONS.other.produce}</a>]
         [<a href="#?consumption=${stack.item}">${small ? TRANSLATIONS.other.consumeSmall : TRANSLATIONS.other.consume}</a>]`;
     }
     else {
-        elm.innerText = `${stack.count}x ${TRANSLATIONS.items[stack.item]}`;
+        elm.innerText = `${stack.count}x ${TRANSLATIONS.items[stack.item] ?? INFO.items[stack.item].name ?? stack.item}`;
         addHandlersItem(elm, stack.item);
     }
  
