@@ -1,0 +1,1214 @@
+match item {
+
+    	Item::IronOre => PartialItemEntry {
+                category: "components",
+                id: "IronOre",
+                name: "Iron ore",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::CopperOre => PartialItemEntry {
+                category: "components",
+                id: "CopperOre",
+                name: "Copper ore",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::StoneOre => PartialItemEntry {
+                category: "components",
+                id: "StoneOre",
+                name: "Stone",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::CoalOre => PartialItemEntry {
+                category: "components",
+                id: "CoalOre",
+                name: "Coal",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::SiliciumOre => PartialItemEntry {
+                category: "components",
+                id: "SiliciumOre",
+                name: "Silicon ore",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::TitaniumOre => PartialItemEntry {
+                category: "components",
+                id: "TitaniumOre",
+                name: "Titanium ore",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Water => PartialItemEntry {
+                category: "components",
+                id: "Water",
+                name: "Water",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Oil => PartialItemEntry {
+                category: "components",
+                id: "Oil",
+                name: "Crude oil",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Hydrogen => PartialItemEntry {
+                category: "components",
+                id: "Hydrogen",
+                name: "Hydrogen",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Deuterium => PartialItemEntry {
+                category: "components",
+                id: "Deuterium",
+                name: "Deuterium",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::AntiMatter => PartialItemEntry {
+                category: "components",
+                id: "AntiMatter",
+                name: "Antimatter",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::DiamondOre => PartialItemEntry {
+                category: "components",
+                id: "DiamondOre",
+                name: "Kimberlite ore",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::IronPlate => PartialItemEntry {
+                category: "components",
+                id: "IronPlate",
+                name: "Iron ingot",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::CopperPlate => PartialItemEntry {
+                category: "components",
+                id: "CopperPlate",
+                name: "Copper ingot",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::StoneBrick => PartialItemEntry {
+                category: "components",
+                id: "StoneBrick",
+                name: "Stone brick",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Graphite => PartialItemEntry {
+                category: "components",
+                id: "Graphite",
+                name: "Energetic graphite",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::SiliciumSingleCrystal => PartialItemEntry {
+                category: "components",
+                id: "SiliciumSingleCrystal",
+                name: "High-purity silicon",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::TitaniumPlate => PartialItemEntry {
+                category: "components",
+                id: "TitaniumPlate",
+                name: "Titanium ingot",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::SulphuricAcid => PartialItemEntry {
+                category: "components",
+                id: "SulphuricAcid",
+                name: "Sulfuric acid",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::RefinedOil => PartialItemEntry {
+                category: "components",
+                id: "RefinedOil",
+                name: "Refined oil",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::HydrogenEnergyFuel => PartialItemEntry {
+                category: "components",
+                id: "HydrogenEnergyFuel",
+                name: "Hydrogen fuel rod",
+                stack: 30 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::DeuteriumEnergyFuel => PartialItemEntry {
+                category: "components",
+                id: "DeuteriumEnergyFuel",
+                name: "Deuteron fuel rod",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::AntimatterEnergyFuel => PartialItemEntry {
+                category: "components",
+                id: "AntimatterEnergyFuel",
+                name: "Antimatter fuel rod",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::FractalSilica => PartialItemEntry {
+                category: "components",
+                id: "FractalSilica",
+                name: "Fractal silicon",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Magnet => PartialItemEntry {
+                category: "components",
+                id: "Magnet",
+                name: "Magnet",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::MagnetismWire => PartialItemEntry {
+                category: "components",
+                id: "MagnetismWire",
+                name: "Magnetic coil",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Glass => PartialItemEntry {
+                category: "components",
+                id: "Glass",
+                name: "Glass",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Diamond => PartialItemEntry {
+                category: "components",
+                id: "Diamond",
+                name: "Diamond",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::SiliciumHighPurity => PartialItemEntry {
+                category: "components",
+                id: "SiliciumHighPurity",
+                name: "Crystal silicon",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::TitaniumAlloy => PartialItemEntry {
+                category: "components",
+                id: "TitaniumAlloy",
+                name: "Titanium alloy",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::GasHydrate => PartialItemEntry {
+                category: "components",
+                id: "GasHydrate",
+                name: "Fire ice",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Plastic => PartialItemEntry {
+                category: "components",
+                id: "Plastic",
+                name: "Plastic",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::CrystalRubber => PartialItemEntry {
+                category: "components",
+                id: "CrystalRubber",
+                name: "Organic crystal",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Graphene => PartialItemEntry {
+                category: "components",
+                id: "Graphene",
+                name: "Graphene",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::FuelThruster => PartialItemEntry {
+                category: "components",
+                id: "FuelThruster",
+                name: "Thruster",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::GratingOre => PartialItemEntry {
+                category: "components",
+                id: "GratingOre",
+                name: "Optical grating crystal",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::SteelPlate => PartialItemEntry {
+                category: "components",
+                id: "SteelPlate",
+                name: "Steel",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::CircuitBoard => PartialItemEntry {
+                category: "components",
+                id: "CircuitBoard",
+                name: "Circuit board",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Prism => PartialItemEntry {
+                category: "components",
+                id: "Prism",
+                name: "Prism",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::ElectricMotor => PartialItemEntry {
+                category: "components",
+                id: "ElectricMotor",
+                name: "Electric motor",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::MicroComponent => PartialItemEntry {
+                category: "components",
+                id: "MicroComponent",
+                name: "Microcrystalline component",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Accelerator1 => PartialItemEntry {
+                category: "components",
+                id: "Accelerator1",
+                name: "Accelerant Mk.I",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::CasimirCrystal => PartialItemEntry {
+                category: "components",
+                id: "CasimirCrystal",
+                name: "Casimir crystal",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::StrangeMatterGenerator => PartialItemEntry {
+                category: "components",
+                id: "StrangeMatterGenerator",
+                name: "Strange matter",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::TitanCrystal => PartialItemEntry {
+                category: "components",
+                id: "TitanCrystal",
+                name: "Titanium crystal",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Nanotube => PartialItemEntry {
+                category: "components",
+                id: "Nanotube",
+                name: "Carbon nanotube",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::IonThruster => PartialItemEntry {
+                category: "components",
+                id: "IonThruster",
+                name: "Reinforced thruster",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::BambooCrystal => PartialItemEntry {
+                category: "components",
+                id: "BambooCrystal",
+                name: "Spiniform stalagmite crystal",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::GearWheel => PartialItemEntry {
+                category: "components",
+                id: "GearWheel",
+                name: "Gear",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::PlasmaGenerator => PartialItemEntry {
+                category: "components",
+                id: "PlasmaGenerator",
+                name: "Plasma exciter",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::PhotoShifter => PartialItemEntry {
+                category: "components",
+                id: "PhotoShifter",
+                name: "Photon combiner",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::MagTurbine => PartialItemEntry {
+                category: "components",
+                id: "MagTurbine",
+                name: "Electromagnetic turbine",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Processor => PartialItemEntry {
+                category: "components",
+                id: "Processor",
+                name: "Processor",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Accelerator2 => PartialItemEntry {
+                category: "components",
+                id: "Accelerator2",
+                name: "Accelerant Mk.II",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::FusionCapacitor => PartialItemEntry {
+                category: "components",
+                id: "FusionCapacitor",
+                name: "Annihilation constraint sphere",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::TitanGlass => PartialItemEntry {
+                category: "components",
+                id: "TitanGlass",
+                name: "Titanium glass",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::ParticleWideBand => PartialItemEntry {
+                category: "components",
+                id: "ParticleWideBand",
+                name: "Particle broadband",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::LogisticDrone => PartialItemEntry {
+                category: "components",
+                id: "LogisticDrone",
+                name: "Logistics drone",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::MonoMagOre => PartialItemEntry {
+                category: "components",
+                id: "MonoMagOre",
+                name: "Unipolar magnet",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::TerrainTool => PartialItemEntry {
+                category: "components",
+                id: "TerrainTool",
+                name: "Foundation",
+                stack: 1000 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::PhotonCapacitorFull => PartialItemEntry {
+                category: "components",
+                id: "PhotonCapacitorFull",
+                name: "Critical photon",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::ParticalCapacitor => PartialItemEntry {
+                category: "components",
+                id: "ParticalCapacitor",
+                name: "Particle container",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::HyperMagnetismRing => PartialItemEntry {
+                category: "components",
+                id: "HyperMagnetismRing",
+                name: "Super-magnetic ring",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::GravityLens => PartialItemEntry {
+                category: "components",
+                id: "GravityLens",
+                name: "Graviton lens",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Accelerator3 => PartialItemEntry {
+                category: "components",
+                id: "Accelerator3",
+                name: "Accelerant Mk.III",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::SpaceWarper => PartialItemEntry {
+                category: "components",
+                id: "SpaceWarper",
+                name: "Space warper",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::PlaneFilter => PartialItemEntry {
+                category: "components",
+                id: "PlaneFilter",
+                name: "Plane filter",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::QuantumProcessor => PartialItemEntry {
+                category: "components",
+                id: "QuantumProcessor",
+                name: "Quantum chip",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::LogisticVessel => PartialItemEntry {
+                category: "components",
+                id: "LogisticVessel",
+                name: "Logistics vessel",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Wood => PartialItemEntry {
+                category: "components",
+                id: "Wood",
+                name: "Log",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::TMatrix => PartialItemEntry {
+                category: "components",
+                id: "TMatrix",
+                name: "Electromagnetic matrix",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::EMatrix => PartialItemEntry {
+                category: "components",
+                id: "EMatrix",
+                name: "Energy matrix",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::CMatrix => PartialItemEntry {
+                category: "components",
+                id: "CMatrix",
+                name: "Structure matrix",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::IMatrix => PartialItemEntry {
+                category: "components",
+                id: "IMatrix",
+                name: "Information matrix",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::GMatrix => PartialItemEntry {
+                category: "components",
+                id: "GMatrix",
+                name: "Gravity matrix",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::UMatrix => PartialItemEntry {
+                category: "components",
+                id: "UMatrix",
+                name: "Universe matrix",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::SolarCollector => PartialItemEntry {
+                category: "components",
+                id: "SolarCollector",
+                name: "Solar sail",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::FrameMaterial => PartialItemEntry {
+                category: "components",
+                id: "FrameMaterial",
+                name: "Frame material",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::DysonSphereComponent => PartialItemEntry {
+                category: "components",
+                id: "DysonSphereComponent",
+                name: "Dyson sphere component",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Rocket => PartialItemEntry {
+                category: "components",
+                id: "Rocket",
+                name: "Small carrier rocket",
+                stack: 10 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::PlantFuel => PartialItemEntry {
+                category: "components",
+                id: "PlantFuel",
+                name: "Plant fuel",
+                stack: 500 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::TeslaCoil => PartialItemEntry {
+                category: "buildings",
+                id: "TeslaCoil",
+                name: "Tesla tower",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::ChargingPole => PartialItemEntry {
+                category: "buildings",
+                id: "ChargingPole",
+                name: "Wireless power tower",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::OrbitalSubstation => PartialItemEntry {
+                category: "buildings",
+                id: "OrbitalSubstation",
+                name: "Satellite substation",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::WindTurbine => PartialItemEntry {
+                category: "buildings",
+                id: "WindTurbine",
+                name: "Wind turbine",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::FuelPlant => PartialItemEntry {
+                category: "buildings",
+                id: "FuelPlant",
+                name: "Thermal power station",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::SolarPanel => PartialItemEntry {
+                category: "buildings",
+                id: "SolarPanel",
+                name: "Solar panel",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::FusionPowerStation => PartialItemEntry {
+                category: "buildings",
+                id: "FusionPowerStation",
+                name: "Mini fusion power station",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Accumulator => PartialItemEntry {
+                category: "buildings",
+                id: "Accumulator",
+                name: "Accumulator",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::AccumulatorFull => PartialItemEntry {
+                category: "buildings",
+                id: "AccumulatorFull",
+                name: "Accumulator(full)",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::EnergyExchanger => PartialItemEntry {
+                category: "buildings",
+                id: "EnergyExchanger",
+                name: "Energy exchanger",
+                stack: 10 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::RayReceiver => PartialItemEntry {
+                category: "buildings",
+                id: "RayReceiver",
+                name: "Ray receiver",
+                stack: 10 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::FusionReactor => PartialItemEntry {
+                category: "buildings",
+                id: "FusionReactor",
+                name: "Artificial star",
+                stack: 10 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Belt1 => PartialItemEntry {
+                category: "buildings",
+                id: "Belt1",
+                name: "Conveyor belt MK.I",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Belt2 => PartialItemEntry {
+                category: "buildings",
+                id: "Belt2",
+                name: "Conveyor belt MK.II",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Belt3 => PartialItemEntry {
+                category: "buildings",
+                id: "Belt3",
+                name: "Conveyor belt MK.III",
+                stack: 200 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Splitter4dir => PartialItemEntry {
+                category: "buildings",
+                id: "Splitter4dir",
+                name: "Splitter(4-direction)",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Storage1 => PartialItemEntry {
+                category: "buildings",
+                id: "Storage1",
+                name: "Storage MK.I",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Storage2 => PartialItemEntry {
+                category: "buildings",
+                id: "Storage2",
+                name: "Storage MK.II",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::StorageTank => PartialItemEntry {
+                category: "buildings",
+                id: "StorageTank",
+                name: "Storage tank",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::LogisticStation => PartialItemEntry {
+                category: "buildings",
+                id: "LogisticStation",
+                name: "Planetary Logistics Station",
+                stack: 10 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::InterstellarLogisticStation => PartialItemEntry {
+                category: "buildings",
+                id: "InterstellarLogisticStation",
+                name: "Interstellar Logistics Station",
+                stack: 10 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::OrbitalCollector => PartialItemEntry {
+                category: "buildings",
+                id: "OrbitalCollector",
+                name: "Orbital Collector",
+                stack: 10 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::EmRailEjector => PartialItemEntry {
+                category: "buildings",
+                id: "EmRailEjector",
+                name: "EM-Rail Ejector",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Inserter1 => PartialItemEntry {
+                category: "buildings",
+                id: "Inserter1",
+                name: "Sorter MK.I",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Inserter2 => PartialItemEntry {
+                category: "buildings",
+                id: "Inserter2",
+                name: "Sorter MK.II",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Inserter3 => PartialItemEntry {
+                category: "buildings",
+                id: "Inserter3",
+                name: "Sorter MK.III",
+                stack: 100 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::MiningDrill => PartialItemEntry {
+                category: "buildings",
+                id: "MiningDrill",
+                name: "Mining machine",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::WaterPump => PartialItemEntry {
+                category: "buildings",
+                id: "WaterPump",
+                name: "Water pump",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::OilExtractor => PartialItemEntry {
+                category: "buildings",
+                id: "OilExtractor",
+                name: "Oil extractor",
+                stack: 10 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::OilRefinery => PartialItemEntry {
+                category: "buildings",
+                id: "OilRefinery",
+                name: "Oil refinery",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::HadronCollider => PartialItemEntry {
+                category: "buildings",
+                id: "HadronCollider",
+                name: "Miniature particle collider",
+                stack: 10 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Lab => PartialItemEntry {
+                category: "buildings",
+                id: "Lab",
+                name: "Matrix lab",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::VerticalLaunchingSilo => PartialItemEntry {
+                category: "buildings",
+                id: "VerticalLaunchingSilo",
+                name: "Vertical launching silo",
+                stack: 10 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Assembler1 => PartialItemEntry {
+                category: "buildings",
+                id: "Assembler1",
+                name: "Assembling machine Mk.I",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Assembler2 => PartialItemEntry {
+                category: "buildings",
+                id: "Assembler2",
+                name: "Assembling machine Mk.II",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Assembler3 => PartialItemEntry {
+                category: "buildings",
+                id: "Assembler3",
+                name: "Assembling machine Mk.III",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Smelter => PartialItemEntry {
+                category: "buildings",
+                id: "Smelter",
+                name: "Smelter",
+                stack: 50 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::SprayCoater => PartialItemEntry {
+                category: "buildings",
+                id: "SprayCoater",
+                name: "Spray coater",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::ChemicalPlant => PartialItemEntry {
+                category: "buildings",
+                id: "ChemicalPlant",
+                name: "Chemical plant",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+	Item::Fractionator => PartialItemEntry {
+                category: "buildings",
+                id: "Fractionator",
+                name: "Fractionator",
+                stack: 20 ,
+                icon: ItemIconLocation{
+                    row : 0,
+                    col: 0
+                }
+            },
+     _ => PartialItemEntry::default(),
+}

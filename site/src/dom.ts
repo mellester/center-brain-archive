@@ -92,7 +92,7 @@ function makeRecipe(recipe: string, type: "listing" | "pinned"): HTMLElement {
 
         let arrow = document.createElement("p");
         arrow.classList.add("bi-arrow-down");
-        arrow.innerText = TRANSLATIONS.other.craftinfo(entry.time, entry.made_in, entry.handcraftable);
+        arrow.innerText = TRANSLATIONS.other.craftinfo(entry.time, entry.made_in[0], entry.handcraftable); // TODO entry.made_in
         body.appendChild(arrow);
 
         let outputs = document.createElement("ul");
@@ -150,15 +150,29 @@ function makeItem(item: Item, type: keyof HTMLElementTagNameMap = "p", small = f
     let elm = document.createElement(type);
     elm.classList.add('dsp-item');
 
-    if (OPTIONS.displayUsageLinks)
+    if (OPTIONS.displayUsageLinks) {
         elm.innerHTML = `${TRANSLATIONS.items[item]} 
             [<a href="#?production=${item}">${small ? TRANSLATIONS.other.produceSmall : TRANSLATIONS.other.produce}</a>]
             [<a href="#?consumption=${item}">${small ? TRANSLATIONS.other.consumeSmall : TRANSLATIONS.other.consume}</a>]`;
+    }
     else {
         elm.innerText = TRANSLATIONS.items[item];
         addHandlersItem(elm, item);
     }
-
+    const col = INFO.items[item].icon.col;
+    const row = INFO.items[item].icon.row;
+    let img = document.createElement('img');
+    const size = {
+        width: 832,
+        height: 768
+    }
+    img.style.backgroundImage = "url(https://raw.githubusercontent.com/factoriolab/factorio-lab/master/src/data/dsp/icons.png)"
+    img.style.width  = (size.width)/13 + "px";
+    img.style.height  = (size.height)/12 + "px";
+    img.style.backgroundPositionX = col.toString() + "px";
+    img.style.backgroundPositionY = row.toString() + "px";
+    //preppend picture 
+    elm.prepend(img);
     return elm;
 }
 
@@ -168,14 +182,30 @@ function makeItem(item: Item, type: keyof HTMLElementTagNameMap = "p", small = f
 function makeItemstack(stack: ItemStack, type: keyof HTMLElementTagNameMap = "p", small = false): HTMLElement {
     let elm = document.createElement(type);
     elm.classList.add('dsp-itemstack');
-    if (OPTIONS.displayUsageLinks)
+    if (OPTIONS.displayUsageLinks){
         elm.innerHTML = `${stack.count}x ${TRANSLATIONS.items[stack.item]} 
         [<a href="#?production=${stack.item}">${small ? TRANSLATIONS.other.produceSmall : TRANSLATIONS.other.produce}</a>]
         [<a href="#?consumption=${stack.item}">${small ? TRANSLATIONS.other.consumeSmall : TRANSLATIONS.other.consume}</a>]`;
+    }
     else {
         elm.innerText = `${stack.count}x ${TRANSLATIONS.items[stack.item]}`;
         addHandlersItem(elm, stack.item);
     }
+ 
+    const col = INFO.items[stack.item].icon.col;
+    const row = INFO.items[stack.item].icon.row;
+    let img = document.createElement('img');
+    const size = {
+        width: 832,
+        height: 768
+    }
+    img.style.backgroundImage = "url(https://raw.githubusercontent.com/factoriolab/factorio-lab/master/src/data/dsp/icons.png)"
+    img.style.width  = (size.width)/13 + "px";
+    img.style.height  = (size.height)/12 + "px";
+    img.style.backgroundPositionX = col.toString() + "px";
+    img.style.backgroundPositionY = row.toString() + "px";
+    //preppend picture 
+    elm.prepend(img);
 
 
     return elm;

@@ -1,0 +1,10 @@
+match item {
+  Item::IronOre => PartialItemEntry {
+                category: "components",
+                id: "iron-ore",
+                name: "Iron ore",
+                stack: 100 ,
+                icon: (0 , 0)
+  },
+  _ => PartialRecipeEntry::default(),
+}

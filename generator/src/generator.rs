@@ -18,6 +18,7 @@ use std::fmt::Debug;
 pub struct AllDSPInfo {
     pub tech_tree: SchemingEnumMap<Technology, TechnologyEntry>,
     pub recipes: SchemingEnumMap<Recipe, RecipeEntry>,
+    pub items: SchemingEnumMap<Item, ItemEntry>,
     pub production_methods: SchemingEnumMap<Item, Vec<Recipe>>,
     pub consumption_methods: SchemingEnumMap<Item, Vec<Recipe>>,
 }
@@ -26,10 +27,12 @@ impl AllDSPInfo {
     /// Generate all the information!
     pub fn generate() -> Self {
         let recipes = RecipeEntry::generate_all();
+        let items = ItemEntry::generate_all();
         let (production_methods, consumption_methods) = generate_usages(&recipes);
         Self {
             tech_tree: TechnologyEntry::generate_all().into(),
             recipes: recipes.into(),
+            items: items.into(),
             production_methods: production_methods.into(),
             consumption_methods: consumption_methods.into(),
         }
@@ -66,6 +69,52 @@ impl TechnologyEntry {
         })
     }
 }
+#[derive(Debug, Default, Serialize, JsonSchema)]
+pub struct ItemIconLocation {
+    row: u32,
+    col: u32
+}
+
+#[derive(Debug, Serialize, JsonSchema)]
+#[serde(deny_unknown_fields)]
+pub struct ItemEntry {
+    item: Item,
+    category: &'static str,
+    id: &'static str,
+    name: &'static str,
+    icon: ItemIconLocation ,
+    stack: u32 ,
+    // fuel: Fuel,
+    // factory: Factory,
+    // belt: Belt,
+    // module: Module,
+}
+#[derive(Default)]
+struct PartialItemEntry {
+    category: &'static str,
+    id: &'static str,
+    name: &'static str,
+    icon: ItemIconLocation ,
+    stack: u32 ,
+}
+
+impl ItemEntry {
+    fn generate_all() -> EnumMap<Item, ItemEntry> {
+        EnumMap::from(|item| {
+            // Includes a incredibly long table, Using the current context
+            let partial = include!("../data/PartialItemEntry.in");
+            // Transform the entry
+            ItemEntry {
+                item,
+                category: partial.category,
+                id: partial.id,
+                name: partial.name,
+                stack: partial.stack ,
+                icon: partial.icon
+            }
+        })
+    }
+}
 
 #[derive(Debug, Serialize, JsonSchema)]
 #[serde(deny_unknown_fields)]
@@ -79,6 +128,8 @@ pub struct RecipeEntry {
     handcraftable: bool,
     unlocked_by: Technology,
 }
+
+
 
 #[derive(Default)]
 struct PartialRecipeEntry {
