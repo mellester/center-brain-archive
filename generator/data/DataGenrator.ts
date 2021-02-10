@@ -82,6 +82,33 @@ let itemsStrings : Array<string> = [];
         const item = items[key];
         if (item == null)
             continue;
+        class struct {
+            position : string | undefined                 
+            id : string | undefined                 
+        }
+        let width, height : number = 0;
+        let icons : struct[] = data.icons as struct[];
+        for (let itter in icons) {
+            const struct = icons[itter];
+            if (struct.hasOwnProperty('id') &&
+                struct.hasOwnProperty('position'))
+            {
+                if (struct.id !==  item.id)
+                    continue;
+                let string = struct.position?.split(' ')
+                if (string === undefined)
+                    continue;
+                width = parseInt(string[0].slice(1,-2) ?? 0);
+                if (width == undefined || isNaN(width)) {
+                    width = 0;
+                }
+                height = parseInt(string[1].slice(1,-2) ?? 0);
+                if (height == undefined || isNaN(height)) {
+                    height = 0;
+                }
+                break;
+            }
+        };
         itemsStrings.push(
             `Item::${camelize(item.id)} => PartialItemEntry {
                 category: "${item.category}",
@@ -89,8 +116,8 @@ let itemsStrings : Array<string> = [];
                 name: "${item.name}",
                 stack: ${item.stack} ,
                 icon: ItemIconLocation{
-                    row : 0,
-                    col: 0
+                    row : ${width},
+                    col: ${height}
                 }
             }`
         )
