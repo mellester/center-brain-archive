@@ -202,8 +202,8 @@ function makeItemstack(stack: ItemStack, type: keyof HTMLElementTagNameMap = "p"
         height: 768
     }
     img.style.backgroundImage = "url(https://raw.githubusercontent.com/factoriolab/factorio-lab/master/src/data/dsp/icons.png)"
-    img.style.width  = (size.width)/13 + "px";
-    img.style.height  = (size.height)/12 + "px";
+    img.style.width  = '-' + (size.width)/13 + "px";
+    img.style.height  = '-' + (size.height)/12 + "px";
     img.style.backgroundPositionX = col.toString() + "px";
     img.style.backgroundPositionY = row.toString() + "px";
     //preppend picture 
